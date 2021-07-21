@@ -1,0 +1,3 @@
+SELECT rekam_medis.grandtotal, rekam_medis.id_pasien, 
+round((rekam_medis.grandtotal * sharingfee.persen / 100),0) 
+as persen FROM rekam_medis, sharingfee GROUP BY rekam_medis.grandtotal
