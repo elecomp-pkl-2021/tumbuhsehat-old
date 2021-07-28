@@ -15,7 +15,10 @@ app_rawat_tambah_after = {
 
 var odontogram_after = function () {
   let check_jumlah = getcheckjumlah(id_pemeriksaan2, id_pasien2, date);
-
+  console.log(id_pemeriksaan2);
+  console.log(id_pasien2);
+  console.log(date);
+  console.log(check_jumlah);
   if (check_jumlah > 0) {
     var data = JSON.parse(odontogramDataUtama);
     console.log("check_jumlah", data);

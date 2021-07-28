@@ -991,7 +991,7 @@ class Doctor extends CI_Controller
     // print_r($this->db->last_query());
   }
 
-  public function detail_informasi_pasien($id_pasien, $id_booking)
+  public function detail_informasi_pasien($id_pasien, $id_booking, $id_rekam_medis)
   {
     $id_user = $this->session->userdata('id_user');
     $this->db->select('*');
@@ -999,8 +999,20 @@ class Doctor extends CI_Controller
     $this->db->join('login_session b', 'a.id_user=b.id_user');
     $this->db->where('a.id_user', $id_user);
     $dokter = $this->db->get('')->result();
+    $tgl_awal = date('Y-m-d');
 
     foreach ($dokter as $key) :
+      $rawat = $this->Home_model->get_one_rawat_by_id_medis($id_pasien, $tgl_awal, $id_rekam_medis);
+      // print_r($this->db->last_query());
+      $data_rawat = json_decode(json_encode(@$rawat[0]), true);
+      if ($data_rawat && is_array($data_rawat)) {
+        $rawat = array_merge(@$data_rawat, array("detail_rawat" => array()));
+      }
+      $data['rawat'] = $rawat;
+
+      $pasien1 = $this->Data_pasien_model->get_medis_pasien($id_rekam_medis, $id_pasien);
+      $data['pasien'] = $pasien1;
+      $data['id_pasien'] = $id_pasien;
       $id_dokter = $key->id_dokter;
       $nama_dokter = $key->nama_dokter;
       $spesialis = $key->spesialis;

@@ -10357,7 +10357,6 @@ function save_temp() {
       ///var obj = JSON.parse(json);
       // let check_jumlah = getcheckjumlah(id_pemeriksaan, id_pasien, date_awal);
       console.log("berhasil");
-      // TODO coba sampe sini terakhir
       let check_jumlah = getcheckjumlah(id_pemeriksaan, id_pasien2, date);
 
       if (check_jumlah > 0) {

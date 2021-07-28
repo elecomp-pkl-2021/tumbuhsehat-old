@@ -1261,13 +1261,13 @@
                   </div>
                   <div class="col-md-4">
                     <div class="col-md-2" style="margin-top: 10px;">
-                    <b>Filter:</b></div>
+                      <b>Filter:</b></div>
                     <div class="col-md-9">
                       <div class="form-group">
                         <input id="filter_tanggal_pemeriksaan_klinis" type="date">
-                          <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
+                        <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
                           <!-- <?php echo $tgl->tanggal_periksa ?> -->
-                          <?php } ?>
+                        <?php } ?>
                         </input>
                       </div>
                     </div>
@@ -1275,30 +1275,30 @@
                   <input id="id_pasien" value="<?php echo $info->id_pasien ?>" hidden>
                   <div id="tampilan_pemeriksaan_klinis" class="col-md-12"></div>
 
-                  
-                   
-                    <div class="col-md-12"><br></div>
 
-                    <div class="col-md-12"><br>
-                      <div class="col-md-8">
-                        <font style="font-weight: bold; font-size: 16px;">Pemeriksaan Klinis Khusus</font>
-                        <span>(Terakhir Update <?php echo $info->tanggal_periksa ?>)</span><br><br>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="col-md-2" style="margin-top: 10px;">
+
+                  <div class="col-md-12"><br></div>
+
+                  <div class="col-md-12"><br>
+                    <div class="col-md-8">
+                      <font style="font-weight: bold; font-size: 16px;">Pemeriksaan Klinis Khusus</font>
+                      <span>(Terakhir Update <?php echo $info->tanggal_periksa ?>)</span><br><br>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="col-md-2" style="margin-top: 10px;">
                         <b>Filter:</b></div>
-                        <div class="col-md-9">
-                          <div class="form-group">
-                            <input id="filter_tanggal_pemeriksaan_klinis_khusus" type="date">
-                              <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
-                              <!-- <?php echo $tgl->tanggal_periksa ?> -->
-                              <?php } ?>
-                            </input>
-                          </div>
+                      <div class="col-md-9">
+                        <div class="form-group">
+                          <input id="filter_tanggal_pemeriksaan_klinis_khusus" type="date">
+                          <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
+                            <!-- <?php echo $tgl->tanggal_periksa ?> -->
+                          <?php } ?>
+                          </input>
                         </div>
                       </div>
-                      <div id="tampilan_pemeriksaan_klinis_khusus" class="col-md-8"></div>
                     </div>
+                    <div id="tampilan_pemeriksaan_klinis_khusus" class="col-md-8"></div>
+                  </div>
                 <?php } ?>
               </div>
 
@@ -1311,13 +1311,13 @@
                     </div>
                     <div class="col-md-4">
                       <div class="col-md-2" style="margin-top: 10px;">
-                      <b>Filter:</b></div>
+                        <b>Filter:</b></div>
                       <div class="col-md-9">
                         <div class="form-group">
                           <input id="filter_tanggal_pemeriksaan_penunjang_radiologi" type="date">
-                            <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
+                          <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
                             <!-- <?php echo $tgl->tanggal_periksa ?> -->
-                            <?php } ?>
+                          <?php } ?>
                           </input>
                         </div>
                       </div>
@@ -1333,12 +1333,12 @@
                     <div class="col-md-4">
                       <br><br>
                       <div class="col-md-2" style="margin-top: 10px;">
-                      <b>Filter:</b></div>
+                        <b>Filter:</b></div>
                       <div class="col-md-9">
                         <div class="form-group">
                           <input id="filter_tanggal_pemeriksaan_penunjang_laboratorium" type="date">
                           <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
-                          <!-- <?php echo $tgl->tanggal_periksa ?> -->
+                            <!-- <?php echo $tgl->tanggal_periksa ?> -->
                           <?php } ?>
                           </input>
                         </div>
@@ -1353,13 +1353,13 @@
               <div id="summary_rekam_medis" class="tab-pane fade">
                 <div class="col-md-12"><br>
                   <div class="col-md-1" style="margin-top: 10px;">
-                  <b>Filter:</b></div>
+                    <b>Filter:</b></div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <input id="filter_t" type="date">
-                        <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
+                      <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
                         <!-- <?php echo $tgl->tanggal_periksa ?> -->
-                        <?php } ?>
+                      <?php } ?>
                       </input>
                     </div>
                   </div>
@@ -1375,25 +1375,25 @@
                     </div>
                   </div>
                   <div class="col-md-3">
-                  <button class="btn btn-primary" id="filter_all" >Tampilkan</button>
+                    <button class="btn btn-primary" id="filter_all">Tampilkan</button>
                   </div>
                 </div>
 
-                <table id="table2" data-url="<?php echo base_url('Doctor/get_summary_rekam_medis/'.$info->id_pasien);?>" data-toggle="table" data-show-refresh="false" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-sort-name="awal_periode_renop" data-sort-order="desc" data-pagination="false">
-                            <thead>
-                                <tr>
-                                    <th data-formatter="runningFormatter" data-sortable="true">No</th>
-                                    <th data-field="nama_dokter"  data-sortable="true">Nama Dokter</th>
-                                    <th data-field="tanggal_periksa"  data-sortable="true">Tanggal Periksa</th>
-                                    <th data-field="jam_mulai_periksa|jam_selesai_periksa"  data-sortable="true" data-align="right" data-formatter="jam_periksa">Jam Pemeriksaan</th>
-                                    <th data-field="keluhan_utama|keterangan|radiologi|keterangan_radiologi|keterangan_laboratorium" data-formatter="summary" data-sortable="true" data-align="right">Summary</th>
-                                </tr>
-                            </thead>
-                </table>  
+                <table id="table2" data-url="<?php echo base_url('Doctor/get_summary_rekam_medis/' . $info->id_pasien); ?>" data-toggle="table" data-show-refresh="false" data-show-toggle="false" data-show-columns="false" data-search="true" data-select-item-name="toolbar1" data-sort-name="awal_periode_renop" data-sort-order="desc" data-pagination="false">
+                  <thead>
+                    <tr>
+                      <th data-formatter="runningFormatter" data-sortable="true">No</th>
+                      <th data-field="nama_dokter" data-sortable="true">Nama Dokter</th>
+                      <th data-field="tanggal_periksa" data-sortable="true">Tanggal Periksa</th>
+                      <th data-field="jam_mulai_periksa|jam_selesai_periksa" data-sortable="true" data-align="right" data-formatter="jam_periksa">Jam Pemeriksaan</th>
+                      <th data-field="keluhan_utama|keterangan|radiologi|keterangan_radiologi|keterangan_laboratorium" data-formatter="summary" data-sortable="true" data-align="right">Summary</th>
+                    </tr>
+                  </thead>
+                </table>
               </div>
 
               <div id="odontogram" class="tab-pane fade">
-              <?php foreach ($info_odontogram->result() as $info) : ?>
+                <?php foreach ($info_odontogram->result() as $info) : ?>
                   <div class="col-md-8">
                     <font style="font-weight: bold; font-size: 16px;">Odontogram</font>
                     <span>(Terakhir Update <?php echo $info->tanggal_periksa ?>)</span><br><br>
@@ -1403,18 +1403,61 @@
                     <b>Filter:</b></div> -->
                     <div class="col-md-9">
                       <div class="form-group">
-                        <input id="filter_o" type="date"></input>
-                          <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
+                        <?php foreach ($tanggal_periksa_penunjang->result() as $tgl) { ?>
                           <!-- <?php echo $tgl->tanggal_periksa ?> -->
-                          <?php } ?>
+                        <?php } ?>
                       </div>
                     </div>
-                    <div class="col-md-3">	
-															<button type="button" id="cari" name="cari" onclick="load_odontogram()">Filter</button>
-										</div>
+                  </div>
+                  <div class="col-lg-12" id="isiodontogram">
+                    <?php $a = 0;
+                    $b = 1;
+                    foreach ($pasien->result() as $result) {
+                      $a++;
+                      if ($a <= $b) { ?>
+                    <?php
+                        $idpemeriksaan = $result->id_rekam_medis;
+                        // echo $idpemeriksaan;
+                        // echo $id_pasien;
+                      }
+                    } ?>
+                    <div id="odontogram_utama">
+                      <input type="hidden" id="example-cursor" value="-webkit-zoom-in">
+                      <div id="svgselect" style="width: 610px; height: 230px; background-color: #ffffff;margin-left: 15px;margin-bottom: 385px;">
+                        <!-- background-color:red -->
+
+
+                        <svg version="1.1" height="140%" width="100%" style="overflow-x: scroll;">
+                          <g transform="scale(1.5)" id="odontogramdetail">
+
+                          </g>
+                        </svg>
+
+                        <br /><br />
+                        <div class='col-sm-12'>
+                          <div class='col-sm-3'>
+                            <!-- <button id="btn_clone">Click Me!</button> -->
+                            <div id="controls" class="panel panel-default">
+                              <div class="panel-body">
+
+                                <svg version="1.1" height="100%" width="100%" style="overflow-x: scroll;" id="parentDiv">
+
+                                  <g transform="scale(4.60),translate(0,0)" id="b_clone">
+                                    aaa
+                                  </g>
+
+                                </svg>
+
+                                <!-- <svg version="1.1" height="100%" width="100%" style="overflow-x: scroll;"  ><ul id="b_clone"><li></li></ul></svg> -->
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 <?php endforeach;  ?>
-                <div id="kota"></div>
               </div>
 
               <div id="metode_pembayaran" class="tab-pane fade">
@@ -1476,10 +1519,25 @@
   </div><!-- /.row -->
 </div>
 <!--/.main-->
+<script src="<?php echo base_url(); ?>assets/js/apps/detail-odontogram.js"></script>
 <script>
-$(document).ready(function() {
+  var link = "<?php echo base_url() ?>";
+  var id_pemeriksaan = "<?php echo @$idpemeriksaan ?>";
+  var id_pemeriksaan2 = "<?php echo @$idpemeriksaan ?>";
+  var id_pasien = "<?php echo $id_pasien ?>";
+  var id_pasien2 = "<?php echo $id_pasien ?>";
+  var date = "<?php echo date('Y-m-d') ?>";
+  var odontogramDataUtama = '<?php echo @$rawat['odontogram'];; ?>';
+  $(document).ready(function() {
+
+    detail_odontogram.init();
+
+  });
+</script>
+<script>
+  $(document).ready(function() {
     pemeriksaan_klinis();
-    
+
     $('#filter_tanggal_pemeriksaan_klinis').change(function() {
       // let a = $(this).val();
       // console.log(a);
@@ -1506,19 +1564,19 @@ $(document).ready(function() {
       // console.log(a);
       pemeriksaan_penunjang_laboratorium();
     });
-});    
+  });
 
-function download(){
-		let foto = $('#foto_radiologi_download').val();
-		window.location.href = "<?php echo base_url().'Doctor/download_radiologi/'?>" + foto;
-}
+  function download() {
+    let foto = $('#foto_radiologi_download').val();
+    window.location.href = "<?php echo base_url() . 'Doctor/download_radiologi/' ?>" + foto;
+  }
 
-function download_lab(){
-		let foto = $('#foto_laboratorium_download').val();
-		window.location.href = "<?php echo base_url().'Doctor/download_lab/'?>" + foto;
-}
+  function download_lab() {
+    let foto = $('#foto_laboratorium_download').val();
+    window.location.href = "<?php echo base_url() . 'Doctor/download_lab/' ?>" + foto;
+  }
 
-function pemeriksaan_klinis() {
+  function pemeriksaan_klinis() {
     var tgl = $('#filter_tanggal_pemeriksaan_klinis').val();
     var id = $('#id_pasien').val();
     $.ajax({
@@ -1532,9 +1590,9 @@ function pemeriksaan_klinis() {
         $('#tampilan_pemeriksaan_klinis').html(data);
       }
     });
-}
+  }
 
-function pemeriksaan_klinis_khusus() {
+  function pemeriksaan_klinis_khusus() {
     var tgl = $('#filter_tanggal_pemeriksaan_klinis_khusus').val();
     var id = $('#id_pasien').val();
     $.ajax({
@@ -1548,9 +1606,9 @@ function pemeriksaan_klinis_khusus() {
         $('#tampilan_pemeriksaan_klinis_khusus').html(data);
       }
     });
-}
+  }
 
-function pemeriksaan_penunjang_radiologi() {
+  function pemeriksaan_penunjang_radiologi() {
     var tgl = $('#filter_tanggal_pemeriksaan_penunjang_radiologi').val();
     var id = $('#id_pasien').val();
     $.ajax({
@@ -1564,9 +1622,9 @@ function pemeriksaan_penunjang_radiologi() {
         $('#tampilan_pemeriksaan_penunjang_radiologi').html(data);
       }
     });
-}
+  }
 
-function pemeriksaan_penunjang_laboratorium() {
+  function pemeriksaan_penunjang_laboratorium() {
     var tgl = $('#filter_tanggal_pemeriksaan_penunjang_laboratorium').val();
     var id = $('#id_pasien').val();
     $.ajax({
@@ -1580,26 +1638,28 @@ function pemeriksaan_penunjang_laboratorium() {
         $('#tampilan_pemeriksaan_penunjang_laboratorium').html(data);
       }
     });
-}
+  }
 
-$("#filter_all").click(function () {
-      var tgl = $("#filter_t").val();
-      var dokter = $("#filter_p").val();
-      var id_pasien2 = '<?php echo $info->id_pasien ?>';
+  $("#filter_all").click(function() {
+    var tgl = $("#filter_t").val();
+    var dokter = $("#filter_p").val();
+    var id_pasien2 = '<?php echo $info->id_pasien ?>';
     //  console.log(kel, subkel)
-      $('#table2').bootstrapTable('refresh', {url: '<?php echo base_url() ?>Doctor/get_summary_rekam_medis/' + (id_pasien2 != ""? id_pasien2 : '') + (dokter != ""? '/' + dokter : '') + (tgl != ""? '/' + tgl : '')});
-});
+    $('#table2').bootstrapTable('refresh', {
+      url: '<?php echo base_url() ?>Doctor/get_summary_rekam_medis/' + (id_pasien2 != "" ? id_pasien2 : '') + (dokter != "" ? '/' + dokter : '') + (tgl != "" ? '/' + tgl : '')
+    });
+  });
 
-function runningFormatter(value, row, index) {
-        return index+1;
-}
+  function runningFormatter(value, row, index) {
+    return index + 1;
+  }
 
-function jam_periksa(value, row, index){
-      return row.jam_mulai_periksa+' - '+row.jam_selesai_periksa;
-}
+  function jam_periksa(value, row, index) {
+    return row.jam_mulai_periksa + ' - ' + row.jam_selesai_periksa;
+  }
 
-function summary(value, row, index){
-      return `
+  function summary(value, row, index) {
+    return `
       <p>
                             <font style="color: #F6336D; font-weight: bold; "> S : </font><span>${row.keluhan_utama}</span>
                           </p>
@@ -1619,16 +1679,19 @@ function summary(value, row, index){
                             <font style="color: #F6336D; font-weight: bold; "> P : </font><span>${row.layanan} ${row.elemen_gigi}(${row.detail_layanan})</span>
                           </p>
       `;
-}
+  }
 
-function load_odontogram(){
+  function load_odontogram() {
     let tgl_awal = $('#filter_o').val();
     //let tgl_akhir = $('#tgl_akhir').val();
     let id_pasien3 = '<?php echo $info->id_pasien ?>';
     $('#kota').html("<img style='display: block; margin: 0 auto; text-align: center; ' src='<?php echo base_url() ?>assets/img/loader-dark.gif'>");
 
-    $.get("<?php echo base_url() ?>Doctor/create_load_odontogram", {tgl_awal:tgl_awal, id_pasien3:id_pasien3}, function(data){
-        $('#kota').html(data);
+    $.get("<?php echo base_url() ?>Doctor/create_load_odontogram", {
+      tgl_awal: tgl_awal,
+      id_pasien3: id_pasien3
+    }, function(data) {
+      $('#kota').html(data);
     });
-} 
+  }
 </script>
