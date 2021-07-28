@@ -5746,17 +5746,6 @@ var odontogram_after = function () {
   ];
   for (var i = 0; i < data.length; i++) {
     // console.log('data',data[i]);
-    $.ajax({
-      type: "GET",
-      url: link + `doctor/getTemp/dental${data[i].title}/${id_pemeriksaan}`,
-      dataType: "json",
-      success: (hasil) => {
-        console.log(hasil.ket_pemeriksaan + "Hanya testing");
-        // console.log("keterangan" + hasil.idSvg);
-        document.getElementById("keterangan" + hasil.idSvg).innerHTML =
-          hasil.ket_pemeriksaan;
-      },
-    });
     if (arrId4Sisi.indexOf(data[i].id) > -1) {
       //   console.log('arrId4Sisi', arrId4Sisi);
       var svg =
@@ -6946,7 +6935,7 @@ var odontogram_after = function () {
         '<text x="6" y="49" stroke="navy" fill="navy" stroke-width="0.1" style="font-size: 6pt;font-weight:normal">' +
         data[i].title_4 +
         "</text>" +
-        '<text id="keterangandental' +
+        '<text id="keteranganafterdental' +
         data[i].title +
         '" x="6" y="37" font-size="6pt">';
       "</text>" + "</g>";
@@ -8226,7 +8215,7 @@ var odontogram_after = function () {
         '<text x="6" y="49" stroke="navy" fill="navy" stroke-width="0.1" style="font-size: 6pt;font-weight:normal">' +
         data[i].title_4 +
         "</text>" +
-        '<text id="keterangandental' +
+        '<text id="keteranganafterdental' +
         data[i].title +
         '" x="6" y="37" font-size="6pt">';
       "</text>" + "</g>";
@@ -9893,7 +9882,6 @@ function keadaan_gigi(filter, yne, idSvg, keterangan_gigi, x, control) {
       } else {
         console.log("gagal");
       }
-
       $.ajax({
         url:
           link +
@@ -9918,11 +9906,9 @@ function keadaan_gigi(filter, yne, idSvg, keterangan_gigi, x, control) {
                 newText.setAttributeNS(null, "x", "6");
                 newText.setAttributeNS(null, "y", "37");
                 newText.setAttributeNS(null, "font-size", "6pt");
-
                 var textNode = document.createTextNode(control);
                 newText.appendChild(textNode);
                 document.getElementById(idSvg).appendChild(newText);
-
                 for (var i = 0; i < allDentalAfter.length; i++) {
                   if (allDentalAfter[i].id === idSvg) {
                     allDentalAfter[i].title_2 = control;
@@ -9946,11 +9932,9 @@ function keadaan_gigi(filter, yne, idSvg, keterangan_gigi, x, control) {
                 newText.setAttributeNS(null, "x", "6");
                 newText.setAttributeNS(null, "y", "43");
                 newText.setAttributeNS(null, "font-size", "6pt");
-
                 var textNode = document.createTextNode(control);
                 newText.appendChild(textNode);
                 document.getElementById(idSvg).appendChild(newText);
-
                 for (var i = 0; i < allDentalAfter.length; i++) {
                   if (allDentalAfter[i].id === idSvg) {
                     allDentalAfter[i].title_3 = control;
@@ -9961,7 +9945,6 @@ function keadaan_gigi(filter, yne, idSvg, keterangan_gigi, x, control) {
                   classe.removeAttribute("class", "active");
                   classe.setAttribute("class", "btn list-group-item");
                 }
-
                 //arrayKeterangan = [];
               });
           } else if (result == 3) {
@@ -9975,11 +9958,9 @@ function keadaan_gigi(filter, yne, idSvg, keterangan_gigi, x, control) {
                 newText.setAttributeNS(null, "x", "6");
                 newText.setAttributeNS(null, "y", "49");
                 newText.setAttributeNS(null, "font-size", "6pt");
-
                 var textNode = document.createTextNode(control);
                 newText.appendChild(textNode);
                 document.getElementById(idSvg).appendChild(newText);
-
                 for (var i = 0; i < allDentalAfter.length; i++) {
                   if (allDentalAfter[i].id === idSvg) {
                     allDentalAfter[i].title_4 = control;

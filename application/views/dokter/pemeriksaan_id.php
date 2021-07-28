@@ -1727,11 +1727,15 @@
 										<script src="<?php echo base_url(); ?>assets/js/apps/rawat-tambah.js"></script>
 
 										<script type="text/javascript">
+											var link2 = "<?php echo base_url() ?>";
 											var link = "<?php echo base_url() ?>";
-											var id_pemeriksaan = "<?php echo $idpemeriksaan ?>";
+											var id_pemeriksaan2 = "<?php echo @$idpemeriksaan ?>";
+											var id_pasien2 = "<?php echo $id_pasien ?>";
+											var id_pemeriksaan = "<?php echo @$idpemeriksaan ?>";
 											var id_pasien = "<?php echo $id_pasien ?>";
 											var date_awal = "<?php echo date("Y-m-d") ?>";
-
+											var odontogramDataUtama2 = '<?php echo @$rawat['odontogram'];; ?>';
+											var date = "<?php echo date('Y-m-d') ?>";
 											$(document).ready(function() {
 
 												app_rawat_tambah.init();
@@ -2645,7 +2649,7 @@
 
 										<script type="text/javascript">
 											var link2 = "<?php echo base_url() ?>";
-											var id_pemeriksaan2 = "<?php echo $idpemeriksaan ?>";
+											var id_pemeriksaan2 = "<?php echo @$idpemeriksaan ?>";
 											var id_pasien2 = "<?php echo $id_pasien ?>";
 											var date = "<?php echo date('Y-m-d') ?>";
 											var odontogramDataUtama = '<?php echo @$rawat['odontogram'];; ?>';
