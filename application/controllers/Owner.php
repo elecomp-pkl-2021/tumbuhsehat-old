@@ -464,8 +464,19 @@ class Owner extends CI_Controller
     $this->load->view('template/template', $data);
   }
 
-  public function detail_informasi_pasien($id_pasien, $id_booking)
+  public function detail_informasi_pasien($id_pasien, $id_booking, $id_rekam_medis)
   {
+    $tgl_awal = date('Y-m-d');
+    $data['id_pasien'] = $id_pasien;
+    $rawat = $this->Home_model->get_one_rawat_by_id_medis($id_pasien, $tgl_awal, $id_rekam_medis);
+    // print_r($this->db->last_query());
+    $data_rawat = json_decode(json_encode(@$rawat[0]), true);
+    if ($data_rawat && is_array($data_rawat)) {
+      $rawat = array_merge(@$data_rawat, array("detail_rawat" => array()));
+    }
+    $data['rawat'] = $rawat;
+    $pasien1 = $this->Data_pasien_model->get_medis_pasien($id_rekam_medis, $id_pasien);
+    $data['pasien'] = $pasien1;
     $dokter = $this->Data_pasien_model->get_dokter();
     $data['dokter'] = $dokter;
     $data['info'] = $this->Informasi_pasien_model->show_informasi($id_pasien, $id_booking);
